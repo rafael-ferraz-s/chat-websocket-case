@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.container {
+  width: 100%;
+  width: 1048px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.input-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.input-box h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.input-box input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.input-box input[type='text']:focus {
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
+  border-color: #a0a0a0;
+}
+
+.chat-box {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box .chat-header {
+  border-radius: 12px 12px 0 0;
+  padding: 15px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #dbdbdb;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.chat-messages-container {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.chat-box .chat-messages {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 75%;
+}
+
+.message-private-sent {
+  background-color: #c3e8ff;
+  margin-left: auto;
+  text-align: right;
+}
+
+.private {
+  background-color: #c3e8ff;
+}
+
+.message-private-received {
+  background-color: #e6e8ff;
+  align-self: flex-start;
+}
+
+.message-admin {
+  background-color: #fff6cc;
+  color: #555;
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 80%;
+  margin: 10px auto;
+  font-style: italic;
+}
+
+.message-sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  margin-left: auto;
+  text-align: right;
+}
+
+.message-received {
+  background-color: #ebebeb;
+  align-self: flex-start;
+  margin-right: auto;
+  text-align: left;
+}
+
+.chat-box .chat-input {
+  display: flex;
+  border-radius: 0 0 12px 12px;
+  gap: 8px;
+  border-top: 1px solid #dbdbdb;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.chat-box .chat-input input[type='text'] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+
+.chat-box .chat-input button {
+  padding: 10px 15px;
+  background-color: #3897f0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.container.hide .input-box {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.container.show-chat .chat-box {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.conected-users {
+  position: absolute;
+  z-index: 1;
+  right: -20%;
+  top: 0;
+  flex-direction: column;
+  width: 150px;
+  display: flex;
+  color: rgb(208, 208, 208);
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 4px;
+  opacity: 0;
+  transition: right 0.5s ease, opacity 0.5s ease;
+}
+
+.conected-users.show {
+  right: 0;
+  opacity: 1;
+}
+
+.conected-users-header {
+  width: 100%;
+  padding: 2px 4px;
+  font-size: 14px;
+}
+
+.conected-users-list > * {
+  padding: 8px 26px;
+  border-top: 1px solid rgb(144, 144, 144);
+}
+
+.conected {
+  color: #fff;
+}
+
+button#private-button-leave {
+  display: none;
+  background-color: #f03838;
+}
+
+button#private-button-leave.active {
+  display: block;
+}
+
+.chat-user-typing {
+  color: #555;
+  padding: 8px 12px;
+  background-color: transparent;
+  font-style: italic;
+}

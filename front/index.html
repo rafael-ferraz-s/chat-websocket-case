@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="conected-users">
+        <div class="conected-users-header">Users</div>
+        <div class="conected-users-list"></div>
+      </div>
+
+      <div class="input-box">
+        <h2>Bem-vindo!</h2>
+        <input type="text" id="nameInput" placeholder="Digite seu nome" />
+      </div>
+
+      <div class="chat-box">
+        <div class="chat-header">Chat Direct</div>
+        <div class="chat-messages-container">
+          <div class="chat-messages"></div>
+        </div>
+        <div class="chat-user-typing"></div>
+        <form action="" method="get" class="chat-input">
+          <input
+            type="text"
+            placeholder="Digite uma mensagem..."
+            class="send-message"
+          />
+          <button type="submit">Enviar</button>
+          <button id="private-button-leave">Sair do modo privado</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
