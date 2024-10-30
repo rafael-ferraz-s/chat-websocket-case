@@ -13,6 +13,6 @@ Se todos os passos foram cumpridos corretamente, abra o seu navegador e acesse h
 3. Caso queira ver os usuários conectados, basta apertar a tecla 'Tab';
 4. Caso queira mandar uma mensagem privada a algum usuário, basta clicar no nome dele. Caso queira sair dessa opção, haverá um botão à direita ou poderá clicar no nome do usuário novamente.
 5. O seu histórico de conversas e notificações é salvo em cache no redis. Caso queira acessar, utilize o comando docker exec -it redis redis-cli.
-   * Para acessar o histórico de mensagens globais, rode o comando GET global_messages;
+   * Para acessar o histórico de mensagens globais, execute o comando GET global_messages;
    * No caso das mensagens privadas, o comando é GET private_messages;
    * Para sair da interface, basta digitar exit no terminal.
