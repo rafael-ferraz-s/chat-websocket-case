@@ -15,7 +15,7 @@ class Event {
 const users = new Map();
 
 const client = await createClient({
-  url: 'redis://localhost:6379',
+  url: 'redis://redis:6379',
 })
   .on('error', (err) => console.log('Redis Client Error', err))
   .connect();
@@ -185,7 +185,7 @@ function disconnect(event, ws) {
 
 function notificarTodos(event) {
   users.forEach((user, userWs) => {
-    if (userWs.readyState === WebSocket.OPEN) {
+    if (userWs.readyState === 1) {
       userWs.send(JSON.stringify(event));
     }
   });
